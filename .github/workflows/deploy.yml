@@ -1,1 +1,29 @@
+name: deploy
 
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  job-1:
+    runs-on: ubuntu latest
+    steps:
+       - name: Terraform Init
+         run: terraform init
+         working-directory: ${{ github.workspace }}/aws-version
+     
+
+       - name: Terraform Apply
+         run: terraform apply
+
+       - name: t-output
+         run: terraform output
+         
+       - name: Export Terraform output
+         id: tf
+         run: |
+            bucket_name=$(terraform output -raw s3_bucket_name)
+            echo "bucket_name=$bucket_name" >> $GITHUB_OUTPUT
+      
+  
