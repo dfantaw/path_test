@@ -11,7 +11,7 @@ jobs:
     steps:
        - name: Terraform Init
          run: terraform init
-         working-directory: aws-version
+         
      
 
        - name: Terraform Apply
