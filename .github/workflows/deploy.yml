@@ -9,6 +9,12 @@ jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
+       - name: List repository contents to verify aws-version directory
+         run: ls -la
+
+       - name: List contents of aws-version directory
+         run: ls -la aws-version
+           
        - name: Terraform Init
          run: terraform init
          working-directory: ${{ github.workspace }}/aws-version
