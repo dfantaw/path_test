@@ -11,7 +11,7 @@ jobs:
     steps:
        - name: Terraform Init
          run: terraform init
-         working-directory: ${{working_direcotoy}}/aws-version
+         working-directory: ${{ github.workspace }}/aws-version
      
 
        - name: Terraform Apply
