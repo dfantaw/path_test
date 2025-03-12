@@ -13,11 +13,11 @@ jobs:
          run: ls -la
 
        - name: List contents of aws-version directory
-         run: ls -la aws-version
+         run: ls -la test
            
        - name: Terraform Init
          run: terraform init
-         working-directory: ${{ github.workspace }}/aws-version
+         working-directory: ${{ github.workspace }}/test
      
 
        - name: Terraform Apply
