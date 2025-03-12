@@ -5,7 +5,7 @@ on:
     branches: [main]
 jobs:
   job1:
-    runs-n: ubuntu-latest
+    runs-on: ubuntu-latest
     outputs:
       job1_name: ${{steps.set-output.outputs.name }}
 
