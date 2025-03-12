@@ -1,1 +1,18 @@
+name: Job output
 
+on:
+  push:
+    branches: [main]
+jobs:
+  job1:
+    runs-n: ubuntu-latest
+    outputs:
+      job1_name: ${{steps.set-output.outputs.name }}
+
+    steps:
+      - name: set output
+        id:   set-output
+        run: echo "name=test_name" >> $GITHUB_OUTPUT
+
+      - name: access output
+        run: echo "value of the name is ${{steps.set-output.outputs.name }}"
