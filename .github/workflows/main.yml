@@ -24,8 +24,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
       
-      - name: Terraform Apply
-        run: terraform apply
+  
 
       - name: Export Terraform output
         id: tf
