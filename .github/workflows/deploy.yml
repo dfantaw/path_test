@@ -38,6 +38,7 @@ jobs:
 
        - name: t-output
          run: terraform output
+         working-directory: ${{ github.workspace }}/test2
          
        - name: Export Terraform output
          id: tf
