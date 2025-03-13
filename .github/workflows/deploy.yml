@@ -45,5 +45,6 @@ jobs:
          run: |
             bucket_name=$(terraform output -raw region)
             echo "bucket_name=$bucket_name" >> $GITHUB_OUTPUT
+            working-directory: ${{ github.workspace }}/test2
       
   
