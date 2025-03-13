@@ -43,8 +43,8 @@ jobs:
        - name: Export Terraform output
          id: tf
          run: |
-            bucket_name=$(terraform output -raw region)
+            cd ${{ github.workspace }}/test2
+            bucket_name=$(terraform output -raw region2)
             echo "bucket_name=$bucket_name" >> $GITHUB_OUTPUT
-            working-directory: ${{ github.workspace }}/test2
       
   
