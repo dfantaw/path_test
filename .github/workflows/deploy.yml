@@ -19,6 +19,12 @@ jobs:
           terraform_version: 1.5.0
           terraform_wrapper: false
 
+       - name: List files in root directory
+         run: ls -la
+
+       - name: List files in aws-version directory
+         run: ls -la test2
+
        - name: Terraform Init
          run: terraform init
          working-directory: ${{ github.workspace }}/test2
