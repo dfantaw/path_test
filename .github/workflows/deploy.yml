@@ -29,11 +29,12 @@ jobs:
 
        - name: Terraform Init
          run: terraform init
-         working-directory: ${{ github.workspace }}/tes
+         working-directory: ${{ github.workspace }}/test2
      
 
        - name: Terraform Apply
          run: terraform apply
+         working-directory: ${{ github.workspace }}/test2
 
        - name: t-output
          run: terraform output
