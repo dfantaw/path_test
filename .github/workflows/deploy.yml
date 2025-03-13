@@ -19,11 +19,12 @@ jobs:
           terraform_version: 1.5.0
           terraform_wrapper: false
 
-       - name: List files in root directory
-         run: ls -la
-
-       - name: List files in aws-version directory
-         run: ls -la test2
+       - name: Set up AWS credentials
+         uses: aws-actions/configure-aws-credentials@v1
+         with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        
 
        - name: Terraform Init
          run: terraform init
