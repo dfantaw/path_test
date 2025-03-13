@@ -9,7 +9,7 @@ output "region2" {
 
 # Define a resource (even if it's just a placeholder)
 resource "aws_s3_bucket" "example" {
-  bucket = "example-bucket-12345-98"
+  bucket = "example-bucket-1234995-98"
   acl    = "private"
 }
 
